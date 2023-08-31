@@ -8,10 +8,10 @@ using xAssert = Xunit.Assert;
 using Theory = Xunit.TheoryAttribute;
 using Tools;
 
-namespace ToolsTest
+namespace ToolsTest.AntonTests
 {
     [TestClass]
-    public class UnitTest1
+    public class MSTest
     {
         [TestMethod]
         public void TestGetColorNameRed()
