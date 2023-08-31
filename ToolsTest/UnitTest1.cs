@@ -1,6 +1,4 @@
-﻿// Це шаблон для побудови класу тестів
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using System;
 using Xunit;
