@@ -16,11 +16,10 @@ namespace Tools
         public static string BlackColorName => GetColorName();
 
         private static string GetColorName([CallerMemberName] string propertyName = null)
-            => propertyName?.Replace("ColoreName", "");
+            => propertyName?.Replace("ColorName", string.Empty);
 
         public static string ToCapital(string text) => text?.ToUpper();
         public static int FindPosition(string text, string findingText) => (text ?? "").IndexOf(findingText);
-
     }
 
 }
