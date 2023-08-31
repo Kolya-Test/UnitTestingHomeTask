@@ -20,7 +20,6 @@ namespace Tools
 
         public static string ToCapital(string text) => text?.ToUpper();
         public static int FindPosition(string text, string findingText) => (text ?? "").IndexOf(findingText);
-
     }
 
 }
