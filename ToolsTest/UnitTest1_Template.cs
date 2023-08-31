@@ -12,7 +12,7 @@ using Theory = Xunit.TheoryAttribute;
 namespace ToolsTest
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest1_Template
     {
         [TestMethod]
         public void TestMethod1()
