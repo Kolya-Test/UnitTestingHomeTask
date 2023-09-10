@@ -30,4 +30,10 @@
     <ProjectReference Include="..\Tools\Tools.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Володимир\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Володимир\" />
+  </ItemGroup>
 </Project>
