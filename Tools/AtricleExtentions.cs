@@ -19,7 +19,8 @@ namespace Tools
         public static bool TitleIsNotEmpty(this Article article) => !string.IsNullOrWhiteSpace(article.Title);
         public static bool TextIsNotEmpty(this Article article) => !string.IsNullOrWhiteSpace(article.Text);
         public static bool HasText(this Article article, string text) => TextTool.FindPosition(article.Text, text) >= 0;
-        
+
+        //TryReplaceText  HasText
         public static bool TryReplaceText(this Article article, string oldText, string newText)
         {
             bool hasText = article.HasText(oldText);
