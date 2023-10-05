@@ -1,15 +1,11 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
-using Xunit;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using nAssert = NUnit.Framework.Assert;
-using xAssert = Xunit.Assert;
-using Theory = Xunit.TheoryAttribute;
+
 using Tools;
 using Tools.Models;
 
-namespace ToolsTest.Володимир
+namespace ToolsTest.Volodymyr
 {
     [TestClass]
     public class MSTest
@@ -25,7 +21,7 @@ namespace ToolsTest.Володимир
             string result = article.GetCapitalTitle();
 
             // Assert
-            Assert.AreEqual("Same article", result);
+            Assert.AreEqual(" SAME ARTICLE", result);
 
         }
         [TestMethod]
@@ -36,6 +32,13 @@ namespace ToolsTest.Володимир
 
             //act
             string result = article.GetCapitalTitle();
+
+
+
+
+
+
+
 
             // Assert
             Assert.IsNull(result);

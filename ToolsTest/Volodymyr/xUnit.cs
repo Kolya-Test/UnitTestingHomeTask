@@ -1,15 +1,11 @@
-﻿using System;
-using Tools;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using Tools;
+
 using Xunit;
 using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-using nAssert = NUnit.Framework.Assert;
-using xAssert = Xunit.Assert;
-using Theory = Xunit.TheoryAttribute;
 using Tools.Models;
 
-namespace ToolsTest.Володимир
+
+namespace ToolsTest.Volodymyr
 {
     public class xUnit
     {
@@ -17,17 +13,18 @@ namespace ToolsTest.Володимир
         public void TryReplaceText()
         {
             // Arrange
-            Article article = new Article { Text = "this is article has text" };
+            Article article = new Article { Text = "this is old text in the article" };
             string newText = "new text";
             string oldText = "old text";
 
             // Act
-
             bool result = article.TryReplaceText(oldText, newText);
+
             // Assert
             Assert.IsTrue(result);
-           
+            Assert.Equals("this is new text in the article", article.Text);
         }
+        [Fact]
         public void TryReplaceTextIsNull()
         {
             // Arrange
@@ -35,13 +32,16 @@ namespace ToolsTest.Володимир
             string newText = "new text";
             string oldText = "old text";
 
+
             // Act
 
             bool result = article.TryReplaceText(oldText, newText);
             // Assert
             Assert.IsFalse(result);
+
             Assert.IsNull(article.Text);
         }
+        [Fact]
         public void TryReplaceTextIsEmpty()
         {
             // Arrange
@@ -57,6 +57,6 @@ namespace ToolsTest.Володимир
             Assert.AreEqual(" ", article.Text);
 
         }
-        
+
     }
 }
