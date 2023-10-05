@@ -11,34 +11,41 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
     public class EditorTestProperty_nUnit
     {
         [Test]
-        public void Editor_Property_Type ()
+        public void Editor_HasTitle_NotNull ()
         {
             //Arrange
-            Article _editor = new Article ();
+            string title = "Title";
             //Act
-            _editor.Editor = new User("Peter");
+            Article _editor = new Article(title);
             //Assert
-            Assert.IsInstanceOf<User>(_editor.Editor);
+            Assert.IsNotNull(_editor.HasTitle);
         }
         [Test]
-        public void Editor_Name_NotNull()
+        public void Editor_HasTitleHasText_NotNullEqual()
         {
             //Arrange
-            Article _editor = new Article();
+            string title = "Title";
+            string text = "Text";
             //Act
-            _editor.Editor = new User("SomeName");
+            Article _editor = new Article(title,text);
             //Assert
-            Assert.IsNotNull( _editor.Editor.Name);
+            Assert.IsNotNull(_editor.HasTitle);
+            Assert.IsNotNull(_editor.HasText);
+            Assert.That(title, Is.EqualTo(_editor.Title));
+            Assert.That(text, Is.EqualTo(_editor.Text));
         }
         [Test]
-        public void Editor_Name_TypeString()
+        public void Editor_HasText_TypeStringNotNull()
         {
             //Arrange
-            Article _editor = new Article();
+            string title = "Title";
+            string text = "Text";
             //Act
-            _editor.Editor = new User("NameHasTypeString");
+            Article _editor = new Article(title,text);
             //Assert
-            Assert.IsInstanceOf<string>(_editor.Editor.Name);
+            Assert.IsInstanceOf<string>(_editor.Title);
+            Assert.IsInstanceOf<string>(_editor.Text);
+            Assert.IsNotNull(_editor.HasText);
         }
     }
 }

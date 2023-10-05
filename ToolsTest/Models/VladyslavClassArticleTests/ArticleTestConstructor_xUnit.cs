@@ -12,38 +12,36 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
         public void CtorArticle_HasType_User()
         {
             //Arrange
-            Article _article = new Article();
             User _user = new User("Tommy");
+            string title = null;
             //Act
-            _article.Autor = _user;
+            Article _article = new Article(_user);
             //Assert
+            Assert.Null(title);
             Assert.IsType<User>(_article.Autor);
         }
         [Fact]
         public void CtorArticle_HasTitleAndText_TypeString()
         {
             //Arrange
-            Article _article = new Article();
+            string title = "Title";   
+            User _user = new User();
             //Act
-            _article.Title = "Title";
-            _article.Text = "Text";
+            Article _article = new Article(title);
             //Assert
             Assert.IsType<string>(_article.Title);
-            Assert.IsType<string>(_article.Text);
+            Assert.NotNull(_user);
         }
         [Fact]
         public void Ctor_AutorTitleText_NotNull()
         {
             //Arrange
-            Article _article = new Article();
+            string _title = "Title";
             //Act
-            _article.Autor = new User("Bill");
-            _article.Title = "Title";
-            _article.Text = "Text";
-            //Assert
-            Assert.NotNull(_article.Autor);
+            Article _article = new Article(_title);
+            //Assert            
             Assert.NotNull(_article.Title);
-            Assert.NotNull(_article.Text);
+            Assert.Equal(_title, _article.Title);
         }
     }
 }

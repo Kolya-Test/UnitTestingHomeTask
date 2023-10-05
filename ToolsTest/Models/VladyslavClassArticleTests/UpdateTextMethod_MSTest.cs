@@ -18,31 +18,31 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             //Act
             _article.UpdateText(_text);
             //Assert
-            Assert.IsNotNull(_article);
+            Assert.IsNotNull(_article.Text);
         }
         [TestMethod]
         public void UpdateText_TextAndUser_NotNull()
         {
             //Arange 
             Article _article = new Article();
-            _article.Text = "Test DONE";
-            _article.Editor = new User("John");
+            string text = "Test DONE";
+            User editor = new User("John");
             //Act
-            _article.UpdateText(_article.Text, _article.Editor);
+            _article.UpdateText(text, editor);
             //Assert
             Assert.IsNotNull(_article.Text);
             Assert.IsNotNull( _article.Editor);
         }
         [TestMethod]
-        public void UpdateText_Text_IsString()
+        public void UpdateTitle_Text_IsString()
         {
             //Arrange
             Article _article = new Article();
-            _article.Text = "some text with type string!";
+            string title = "Tytle is string!";
             //Act
-            _article.UpdateText(_article.Text);
+            _article.UpdateTitle(title);
             //Assert
-            Assert.IsInstanceOfType(_article.Text, typeof(string));
+            Assert.IsInstanceOfType(_article.Title, typeof(string));
         }
     }
 }
