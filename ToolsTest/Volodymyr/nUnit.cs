@@ -1,9 +1,6 @@
 ﻿using Tools;
 using NUnit.Framework;
-
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 using Tools.Models;
-
 
 namespace ToolsTest.Volodymyr
 {

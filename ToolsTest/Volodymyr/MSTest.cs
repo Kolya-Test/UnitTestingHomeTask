@@ -1,7 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
-
 using Tools;
 using Tools.Models;
 
@@ -21,7 +18,7 @@ namespace ToolsTest.Volodymyr
             string result = article.GetCapitalTitle();
 
             // Assert
-            Assert.AreEqual(" SAME ARTICLE", result);
+            Assert.AreEqual("SAME ARTICLE", result);
 
         }
         [TestMethod]

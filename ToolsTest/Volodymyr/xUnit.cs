@@ -1,10 +1,7 @@
 ﻿using Tools;
-
 using Xunit;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+
 using Tools.Models;
-
-
 namespace ToolsTest.Volodymyr
 {
     public class xUnit
@@ -13,7 +10,7 @@ namespace ToolsTest.Volodymyr
         public void TryReplaceText()
         {
             // Arrange
-            Article article = new Article { Text = "this is old text in the article" };
+            Article article = new Article { Text = " Text = this is old text in the article" };
             string newText = "new text";
             string oldText = "old text";
 
@@ -21,8 +18,8 @@ namespace ToolsTest.Volodymyr
             bool result = article.TryReplaceText(oldText, newText);
 
             // Assert
-            Assert.IsTrue(result);
-            Assert.Equals("this is new text in the article", article.Text);
+            Assert.True(result);
+            Assert.Equal("this is new text in the article", article.Text);
         }
         [Fact]
         public void TryReplaceTextIsNull()
@@ -37,9 +34,9 @@ namespace ToolsTest.Volodymyr
 
             bool result = article.TryReplaceText(oldText, newText);
             // Assert
-            Assert.IsFalse(result);
+            Assert.False(result);
 
-            Assert.IsNull(article.Text);
+            Assert.Null(article.Text);
         }
         [Fact]
         public void TryReplaceTextIsEmpty()
@@ -53,8 +50,8 @@ namespace ToolsTest.Volodymyr
 
             bool result = article.TryReplaceText(oldText, newText);
             // Assert
-            Assert.IsFalse(result);
-            Assert.AreEqual(" ", article.Text);
+            Assert.False(result);
+            Assert.Equal(" ", article.Text);
 
         }
 
