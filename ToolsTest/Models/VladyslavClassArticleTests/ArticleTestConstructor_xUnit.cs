@@ -9,31 +9,28 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
     public class ArticleTestConstructor_xUnit
     {
         [Fact]
-        public void CtorArticle_HasType_User()
+        public void CtorArticle_IsType_User()
         {
             //Arrange
-            User _user = new User("Tommy");
-            string title = null;
+            User _user = new User("Tommy");           
             //Act
             Article _article = new Article(_user);
-            //Assert
-            Assert.Null(title);
+            //Assert            
             Assert.IsType<User>(_article.Autor);
         }
         [Fact]
-        public void CtorArticle_HasTitleAndText_TypeString()
+        public void CtorArticle_HasTitleHasText_NotNull()
         {
             //Arrange
-            string title = "Title";   
-            User _user = new User();
+            string _title = "Title";  
+            string _text = "Text";
             //Act
-            Article _article = new Article(title);
+            Article _article = new Article(_title, _text);
             //Assert
-            Assert.IsType<string>(_article.Title);
-            Assert.NotNull(_user);
+            Assert.NotNull(_article);          
         }
         [Fact]
-        public void Ctor_AutorTitleText_NotNull()
+        public void Ctor_Title_NotNull_Equal()
         {
             //Arrange
             string _title = "Title";

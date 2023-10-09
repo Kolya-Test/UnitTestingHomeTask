@@ -16,9 +16,9 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             //Arrange
             string title = "Title";
             //Act
-            Article _editor = new Article(title);
+            Article _article = new Article(title);
             //Assert
-            Assert.IsNotNull(_editor.HasTitle);
+            Assert.True(_article.HasTitle);
         }
         [Test]
         public void Editor_HasTitleHasText_NotNullEqual()
@@ -27,25 +27,36 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             string title = "Title";
             string text = "Text";
             //Act
-            Article _editor = new Article(title,text);
+            Article _article = new Article(title,text);
             //Assert
-            Assert.IsNotNull(_editor.HasTitle);
-            Assert.IsNotNull(_editor.HasText);
-            Assert.That(title, Is.EqualTo(_editor.Title));
-            Assert.That(text, Is.EqualTo(_editor.Text));
+            Assert.True(_article.HasTitle);
+            Assert.True(_article.HasText);
+            Assert.That(title, Is.EqualTo(_article.Title));
+            Assert.That(text, Is.EqualTo(_article.Text));
         }
         [Test]
-        public void Editor_HasText_TypeStringNotNull()
+        public void Editor_UpdateTextHasText_True()
         {
             //Arrange
             string title = "Title";
             string text = "Text";
             //Act
-            Article _editor = new Article(title,text);
+            Article _article = new Article(title);
+            _article.UpdateText(text);
             //Assert
-            Assert.IsInstanceOf<string>(_editor.Title);
-            Assert.IsInstanceOf<string>(_editor.Text);
-            Assert.IsNotNull(_editor.HasText);
+            Assert.True(_article.HasText);            
+        }
+        [Test]
+        public void Editor_HasText_False_HasTitle_True()
+        {
+            //Arrange
+            string title = "Title";
+            //Act
+            Article _article = new Article();
+            _article.UpdateTitle(title);
+            //Assert
+            Assert.True(_article.HasTitle);
+            Assert.False(_article.HasText);
         }
     }
 }

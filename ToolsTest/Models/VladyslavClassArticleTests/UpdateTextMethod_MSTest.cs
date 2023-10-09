@@ -42,7 +42,8 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             //Act
             _article.UpdateTitle(title);
             //Assert
-            Assert.IsInstanceOfType(_article.Title, typeof(string));
+            Assert.IsNotNull(_article.Title);
+            Assert.AreEqual(_article.Title, title);
         }
     }
 }
