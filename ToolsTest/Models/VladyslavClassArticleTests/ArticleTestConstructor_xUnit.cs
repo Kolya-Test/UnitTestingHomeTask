@@ -9,14 +9,14 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
     public class ArticleTestConstructor_xUnit
     {
         [Fact]
-        public void CtorArticle_IsType_User()
+        public void CtorArticle_User_NotNull()
         {
             //Arrange
             User _user = new User("Tommy");           
             //Act
             Article _article = new Article(_user);
             //Assert            
-            Assert.IsType<User>(_article.Autor);
+            Assert.NotNull(_article.Autor);
         }
         [Fact]
         public void CtorArticle_HasTitleHasText_NotNull()
@@ -27,7 +27,8 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             //Act
             Article _article = new Article(_title, _text);
             //Assert
-            Assert.NotNull(_article);          
+            Assert.NotNull(_article.Title);
+            Assert.NotNull(_article.Text);
         }
         [Fact]
         public void Ctor_Title_NotNull_Equal()
