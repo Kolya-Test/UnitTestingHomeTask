@@ -34,7 +34,7 @@ namespace ToolsTest.Models.VladyslavClassArticleTests
             Assert.IsNotNull( _article.Editor);
         }
         [TestMethod]
-        public void UpdateTitle_Text_IsString()
+        public void UpdateTitle_Title_NotNull_Equal()
         {
             //Arrange
             Article _article = new Article();
