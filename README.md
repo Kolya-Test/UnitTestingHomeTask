@@ -63,7 +63,7 @@
 | --------- | ----------------- | ---------------------------------------------------- |
 | Антон     |     TextTool      | GetColorName(), ToCapital(), FindPosition()
 | Артур     |                   |
-| Василь    |                   |
+| Василь    |     Article       | Article(), GetSentences()
 | Владислав |     Article       | Article(), Editor, UpdateText()
 | Володимир | AtricleExtentions | HasText(), GetCapitalTitle(), TryReplaceText()
 | Олексій   |                   |
